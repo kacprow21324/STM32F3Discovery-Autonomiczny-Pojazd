@@ -1,0 +1,12 @@
+../Core/Src/main.c:70:6:zatrzymajSilniki	4	static
+../Core/Src/main.c:78:6:jedzNaprzod	16	static
+../Core/Src/main.c:97:6:jedzDoTylu	16	static
+../Core/Src/main.c:113:6:skrecWLewo	16	static
+../Core/Src/main.c:129:6:skrecWPrawo	16	static
+../Core/Src/main.c:142:6:zatrzymajRobota	8	static
+../Core/Src/main.c:160:6:sekwencja	8	static
+../Core/Src/main.c:184:5:main	16	static
+../Core/Src/main.c:234:6:SystemClock_Config	72	static
+../Core/Src/main.c:271:13:MX_TIM3_Init	64	static
+../Core/Src/main.c:334:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:374:6:Error_Handler	4	static,ignoring_inline_asm
