@@ -10,7 +10,7 @@ Repozytorium zawiera kod, dokumentację oraz materiały projektowe.
 
 ## 📌 Opis projektu
 
-Celem projektu jest opracowanie modelu autonomicznego pojazdu sterowanego za pomocą mikrokontrolera STM32. Pojazd porusza się w trybie półautomatycznym lub automatycznym, omija przeszkody i/lub śledzi linię. Komunikacja z użytkownikiem odbywa się przez UART (Bluetooth lub przewodowo).
+Projekt zakłada stworzenie modelu pojazdu autonomicznego opartego na mikrokontrolerze STM32, który w trybie półautomatycznym realizuje polecenia operatora, a w pełni automatycznym samodzielnie wybiera trasę i reaguje na otoczenie. Dzięki zestawowi czujników ultradźwiękowych i optycznych pojazd potrafi wykrywać i omijać przeszkody oraz precyzyjnie podążać za namalowaną linią trasy. Sterowanie napędem realizowane jest poprzez generowanie sygnałów PWM, a całość logiki działania opiera się na wbudowanych timerach i (opcjonalnie) systemie zarządzania zadaniami w czasie rzeczywistym. Użytkownik komunikuje się z pojazdem poprzez interfejs UART (np. moduł Bluetooth HC-05), co umożliwia zdalne wydawanie komend, odczyt stanu sensorów oraz zmianę trybu jazdy. Mam pomysł, żeby na płytce STM32F3Discovery zaimplementować diodowy system informacyjny: podczas skrętu w prawo migotałyby diody zamontowane po prawej stronie platformy, a przy skręcie w lewo – analogiczne diody po stronie lewej. 
 
 ---
 
@@ -69,15 +69,15 @@ Celem projektu jest opracowanie modelu autonomicznego pojazdu sterowanego za pom
 
 ## 📸 Demo i zdjęcia
 
-- Zdjęcia pojazdu: [`/Media/photos/`](./Media/photos/)
-- Nagranie testów: [Demo Video](#) *(link do YouTube lub Dysku Google)*
+- Zdjęcia pojazdu: [`/Media/Zdjęcia`](./Media/Zdjęcia)
+- Nagranie testów: [`/Media/Filmy`](./Media/Filmy)
 
 ---
 
 ## 📄 Dokumentacja
 
-Pełna dokumentacja projektu znajduje się w folderze [`Docs/`](./Docs/), w tym:
-- Raport końcowy (PDF)
+Pełna dokumentacja projektu znajduje się w folderze [`Dokumentacja/`](./Dokumentacja/), w tym:
+- Raporty z postępów prac nad pojazdem
 - Schematy układów
 - Lista komponentów
 
@@ -86,10 +86,10 @@ Pełna dokumentacja projektu znajduje się w folderze [`Docs/`](./Docs/), w tym:
 ## 📅 Harmonogram pracy
 
 - Tydzień 1–2: Koncepcja i lista komponentów  
-- Tydzień 3–5: Budowa pojazdu i montaż elektroniki  
-- Tydzień 6–9: Programowanie sensorów i napędu  
-- Tydzień 10–12: Komunikacja UART + testy  
-- Tydzień 13–14: Finalizacja, dokumentacja, raport  
+- 
+- 
+- 
+- 
 
 ---
 
@@ -102,8 +102,8 @@ _(Tutaj uzupełnij po zakończeniu projektu)_
 ## 📬 Kontakt
 
 W razie pytań:
-- Email: 
-- GitHub: 
+- Email: 21324@student.ans-elblag.pl
+- GitHub: https://github.com/kacprow21324
 
 ---
 
