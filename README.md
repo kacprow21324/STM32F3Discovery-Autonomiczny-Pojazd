@@ -10,7 +10,7 @@ Repozytorium zawiera kod, dokumentację oraz materiały projektowe.
 
 ## 📌 Opis projektu
 
-Projekt zakłada stworzenie modelu pojazdu autonomicznego opartego na mikrokontrolerze STM32, który w trybie półautomatycznym realizuje polecenia operatora, a w pełni automatycznym samodzielnie wybiera trasę i reaguje na otoczenie. Dzięki zestawowi czujników ultradźwiękowych i optycznych pojazd potrafi wykrywać i omijać przeszkody oraz precyzyjnie podążać za namalowaną linią trasy. Sterowanie napędem realizowane jest poprzez generowanie sygnałów PWM, a całość logiki działania opiera się na wbudowanych timerach i (opcjonalnie) systemie zarządzania zadaniami w czasie rzeczywistym. Użytkownik komunikuje się z pojazdem poprzez interfejs UART (np. moduł Bluetooth HC-05), co umożliwia zdalne wydawanie komend, odczyt stanu sensorów oraz zmianę trybu jazdy. Mam pomysł, żeby na płytce STM32F3Discovery zaimplementować diodowy system informacyjny: podczas skrętu w prawo migotałyby diody zamontowane po prawej stronie platformy, a przy skręcie w lewo – analogiczne diody po stronie lewej. 
+Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego opartego na mikrokontrolerze STM32F3Discovery, który może funkcjonować w dwóch trybach działania: półautomatycznym oraz w pełni autonomicznym. W trybie półautomatycznym pojazd realizuje komendy wydawane przez użytkownika za pośrednictwem interfejsu UART, który umożliwia komunikację np. za pomocą modułu Bluetooth HC-05. W trybie automatycznym pojazd samodzielnie analizuje otoczenie przy użyciu zestawu sensorów ultradźwiękowych (HC-SR04) oraz optycznych (czujniki IR TCRT5000), co pozwala mu wykrywać i zatrzymać się jeżeli wykryje daną przeszkode oraz precyzyjnie podążać za namalowaną na podłożu linią trasy. Sterowanie napędem jest realizowane za pomocą sygnałów PWM generowanych przez wbudowane timery mikrokontrolera, umożliwiających precyzyjną regulację prędkości jazdy oraz płynność manewrów. System sterowania opiera się na efektywnej obsłudze przerwań oraz ewentualnie na systemie operacyjnym czasu rzeczywistego (RTOS), zapewniającym dokładne zarządzanie zadaniami. Użytkownik poprzez komendy UART może dynamicznie zmieniać parametry jazdy, odczytywać aktualny stan czujników oraz przełączać tryby pracy pojazdu, co umożliwia pełną kontrolę oraz analizę danych w czasie rzeczywistym.
 
 ---
 
@@ -20,50 +20,65 @@ Projekt zakłada stworzenie modelu pojazdu autonomicznego opartego na mikrokontr
 - **IDE:** STM32CubeIDE
 - **Programowanie:** C (HAL / LL)
 - **Sensory:**
-  - HC-SR04 (ultradźwiękowy)
-  - Sensory optyczne TCRT5000 (IR)
+  - 2x HC-SR04 (ultradźwiękowy)
+  - 5x Sensory optyczne TCRT5000 (IR)
 - **Zasilanie:** Koszyk na 6 baterii typu AA (R6) - 1x6
 - **Sterownik silników:** L298N
 - **Komunikacja:** UART przez Bluetooth HC-05
+- **Sterowanie:** Aplikacja mobilna [`Serial Bluetooth Terminal`](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=pl) (Android)
 
 ---
 
 ## ⚙️ Funkcjonalności
 
-- ✅ Napęd sterowany przez PWM z użyciem Timerów
-- ✅ Obsługa sensorów ultradźwiękowych (pomiar odległości)
-- ✅ Odczyt wartości z sensorów IR (linia / przeszkody) przy użyciu ADC
-- ✅ Detekcja kolizji i unikanie przeszkód
-- ✅ Sterowanie ruchem przez UART (komendy tekstowe)
-- ✅ Zasilanie bateryjne – pełna autonomia
-- ✅ Regularne wersjonowanie kodu (min. 1 commit/tydzień)
+- ✅ **Napęd robota sterowany przez PWM** – płynna kontrola prędkości silników
+- ✅ **Jazda do przodu, do tyłu, skręt w lewo i prawo** – niezależne sterowanie silnikami przez mostek
+- ✅ **Regulacja prędkości jazdy** – możliwość zwiększania i zmniejszania prędkości
+- ✅ **Jazda po linii z detekcją przeszkód** – reagowanie przez sensorów IR i czujniki ultradźwiękowe
+- ✅ **Unikanie kolizji** – zatrzymywanie robota w przypadku wykrycia przeszkody
+- ✅ **Zdalne sterowanie przez Bluetooth (HC-05)** z poziomu np. telefonu
+- ✅ **Sterowanie tekstowe przez UART** – wysyłanie komend do robota
+- ✅ **Wyświetlanie odległości** – robot przesyła informacje o odległości z lewej i prawej strony
+- ✅ **Tryb automatyczny (jazda po linii)** – robot samodzielnie podąża za trasą i omija przeszkody
+- ✅ **Autonomiczne zasilanie bateryjne** – pełna autonomia
 
 ---
 
 ## 📁 Struktura repozytorium
 
+na sam koniec dorobić !
 
 ---
 
-## 🔌 Komendy UART
+## 📡 Komendy UART
 
-| Komenda | Opis                    |
-|--------:|-------------------------|
-| `START` | Uruchamia pojazd       |
-| `STOP`  | Zatrzymuje pojazd      |
-| `LEFT`  | Skręt w lewo           |
-| `RIGHT` | Skręt w prawo          |
-| `DIST?` | Zwraca odczyt z HC-SR04 |
+| Komenda | Opis                                      |
+|--------:|-------------------------------------------|
+| `G`     | Jazda do przodu                           |
+| `T`     | Jazda do tyłu                             |
+| `L`     | Skręt w lewo                              |
+| `P`     | Skręt w prawo                             |
+| `S`     | Zatrzymanie robota                        |
+| `M`     | Zwiększenie prędkości                     |
+| `N`     | Zmniejszenie prędkości                    |
+| `A`     | Włączenie trybu automatycznego (jazda po linii) |
+| `a`     | Wyłączenie trybu automatycznego i zatrzymanie |
+| `O`     | Wyświetlenie odległości z czujników       |
 
 ---
 
 ## 🧪 Scenariusze testowe
 
 - [x] Detekcja przeszkody z przodu (sensor HC-SR04)
-- [x] Reakcja na białą/czarną linię (IR)
-- [x] Komunikacja przez Bluetooth
-- [x] Test zasilania bateryjnego
-- [x] Sterowanie ruchem w czasie rzeczywistym
+- [x] Reakcja na białą/czarną linię (czujniki IR)
+- [x] Komunikacja przez Bluetooth z aplikacją mobilną
+- [x] Test zasilania bateryjnego (mobilność bez kabli)
+- [x] Sterowanie ruchem w czasie rzeczywistym (UART)
+- [x] Zmiana prędkości robota komendami
+- [x] Przełączanie między trybem ręcznym a automatycznym
+- [x] Poprawne zatrzymanie robota na komendę
+- [x] Odczyt i transmisja odległości przez UART
+- [x] Reakcja na przeszkody podczas jazdy po linii
 
 ---
 
@@ -85,11 +100,10 @@ Pełna dokumentacja projektu znajduje się w folderze [`Dokumentacja/`](./Dokume
 
 ## 📅 Harmonogram pracy
 
-- Tydzień 1–2: Koncepcja i lista komponentów  
-- 
-- 
-- 
-- 
+- Milestone 1: 19.05.2025
+- Milestone 2: 27.05.2025
+- Milestone 3: 03.06.2025
+- Prezentacja projektu: 10.06.2025
 
 ---
 
