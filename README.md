@@ -62,6 +62,8 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 
 ## 📁 Struktura repozytorium
 
+```
+
 STM32F3Discovery-Autonomiczny-Pojazd/
 ├── Dokumentacja/
 │   ├── Harmonogram.pdf
@@ -77,6 +79,8 @@ STM32F3Discovery-Autonomiczny-Pojazd/
 │   └── Filmy/   
 ├── LICENSE.md
 └── README.md
+
+```
 
 ---
 
