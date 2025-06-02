@@ -33,6 +33,14 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 
 ---
 
+## 🛠️ Schemat podłączeń
+
+![S2](./Dokumentacja/Schemat4.2.png)
+
+![S1](./Dokumentacja/Schemat4.1.png)
+
+---
+
 ## ⚙️ Funkcjonalności
 
 - ✅ **Napęd robota sterowany przez PWM** – płynna kontrola prędkości silników
