@@ -41,6 +41,10 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 
 ---
 
+## 🔩 Opis połączeń
+
+---
+
 ## ⚙️ Funkcjonalności
 
 - ✅ **Napęd robota sterowany przez PWM** – płynna kontrola prędkości silników
@@ -58,7 +62,21 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 
 ## 📁 Struktura repozytorium
 
-na sam koniec dorobić !
+STM32F3Discovery-Autonomiczny-Pojazd/
+├── Dokumentacja/
+│   ├── Harmonogram.pdf
+│   ├── Milstone1_21324.pdf
+│   ├── Milstone2_21324.pdf
+│   ├── Milstone3_21324.pdf
+│   ├── STM32F3Discovery.pdf
+│   ├── Schemat4.1.pdf
+│   └── Schemat4.2.pdf
+├── Kod/ ~ # Kod źródłowy projektu
+├── Media/
+│   ├── Zdjęcia/
+│   └── Filmy/   
+├── LICENSE.md
+└── README.md
 
 ---
 
@@ -133,4 +151,4 @@ W razie pytań:
 
 ---
 
-**Licencja:** MIT  
+**Licencja:** [`MIT`](./LICENSE.md)   
