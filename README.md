@@ -116,7 +116,7 @@ _(Tutaj uzupełnij po zakończeniu projektu)_
 ## 📬 Kontakt
 
 W razie pytań:
--  Email:  21324@student.ans-elblag.pl
+- Email:   21324@student.ans-elblag.pl
 - GitHub:  https://github.com/kacprow21324
 
 ---
