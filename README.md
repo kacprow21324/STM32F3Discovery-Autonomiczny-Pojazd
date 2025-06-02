@@ -43,6 +43,84 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 
 ## 🔩 Opis połączeń
 
+1. **Silnik 1 (lewy górny):**  
+   - L298N → `OUT1` (czerwony), `OUT2` (czarny)
+
+2. **Silnik 2 (lewy dolny):**  
+   - L298N → `OUT1` (czerwony), `OUT2` (czarny)
+
+3. **Silnik 3 (prawy górny):**  
+   - L298N → `OUT3` (czerwony), `OUT4` (czarny)
+
+4. **Silnik 4 (prawy dolny):**  
+   - L298N → `OUT3` (czerwony), `OUT4` (czarny)
+
+5. **L298N – sterowanie kanałem A (silniki 1 + 2):**  
+   - `ENA` → `PB10` (STM32F3, PWM)  
+   - `IN1` → `PA6` (STM32F3)  
+   - `IN2` → `PA7` (STM32F3)
+
+6. **L298N – sterowanie kanałem B (silniki 3 + 4):**  
+   - `ENB` → `PB11` (STM32F3, PWM)  
+   - `IN3` → `PB0` (STM32F3)  
+   - `IN4` → `PB1` (STM32F3)
+
+7. **Czujnik TCRT5000 #1:**  
+   - `A0` → `PC0`  
+   - `GND` → `GND`  
+   - `VCC` → `V5`
+
+8. **Czujnik TCRT5000 #2:**  
+   - `A0` → `PC1`  
+   - `GND` → `GND`  
+   - `VCC` → `V5`
+
+9. **Czujnik TCRT5000 #3:**  
+   - `A0` → `PB3`  
+   - `GND` → `GND`  
+   - `VCC` → `V5`
+
+10. **Czujnik TCRT5000 #4:**  
+    - `A0` → `PB5`  
+    - `GND` → `GND`  
+    - `VCC` → `V5`
+
+11. **Czujnik TCRT5000 #5:**  
+    - `A0` → `PB7`  
+    - `GND` → `GND`  
+    - `VCC` → `V5`
+
+12. **HC-SR04 #1 (lewy):**  
+    - `TRIG` → `PB13`  
+    - `ECHO` → `PA2`  
+    - `VCC` → `V5`  
+    - `GND` → `GND`
+
+13. **HC-SR04 #2 (prawy):**  
+    - `TRIG` → `PB12`  
+    - `ECHO` → `PA1`  
+    - `VCC` → `V5`  
+    - `GND` → `GND`
+
+14. **HC-05 (Bluetooth):**  
+    - `TXD` → `PC4`  
+    - `RXD` ← `PC5`  
+    - `VCC` → `V5`  
+    - `GND` → `GND`
+
+15. **Zasilanie 12 V:**  
+    - Bateria 6×AA → `L298N 12 V IN`
+
+16. **Regulator 5 V (L298N):**  
+    - `L298N 5 V` → `V5 (STM32F3)` → zasila moduły 5 V
+
+17. **Masa (GND):**  
+    - `Bateria GND` → `L298N GND` → wspólna `GND` →  
+      - `STM32F3 GND`  
+      - GND TCRT5000 (#1–#5)  
+      - GND HC-SR04 (#1–#2)  
+      - GND HC-05
+
 ---
 
 ## ⚙️ Funkcjonalności
@@ -73,7 +151,7 @@ STM32F3Discovery-Autonomiczny-Pojazd/
 │   ├── STM32F3Discovery.pdf
 │   ├── Schemat4.1.pdf
 │   └── Schemat4.2.pdf
-├── Kod/ ~ # Kod źródłowy projektu
+├── Kod/
 ├── Media/
 │   ├── Zdjęcia/
 │   └── Filmy/   
@@ -81,7 +159,6 @@ STM32F3Discovery-Autonomiczny-Pojazd/
 └── README.md
 
 ```
-
 ---
 
 ## 📡 Komendy UART
