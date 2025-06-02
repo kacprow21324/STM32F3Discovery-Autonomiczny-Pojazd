@@ -84,8 +84,8 @@ na sam koniec dorobić !
 
 ## 📸 Demo i zdjęcia
 
-- Zdjęcia pojazdu: [`/Media/Zdjęcia`](./Media/Zdjęcia)
-- Nagranie testów: [`/Media/Filmy`](./Media/Filmy)
+- [`Zdjęcia pojazdu`](./Media/Zdjęcia)
+- [`Nagranie testów`](./Media/Filmy)
 
 ---
 
@@ -116,8 +116,8 @@ _(Tutaj uzupełnij po zakończeniu projektu)_
 ## 📬 Kontakt
 
 W razie pytań:
-- Email: 21324@student.ans-elblag.pl
-- GitHub: https://github.com/kacprow21324
+- Email:   21324@student.ans-elblag.pl
+- GitHub:  https://github.com/kacprow21324
 
 ---
 
