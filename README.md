@@ -69,29 +69,29 @@ na sam koniec dorobić !
 
 ## 🧪 Scenariusze testowe
 
-- [x] Detekcja przeszkody z przodu (sensor HC-SR04)
-- [x] Reakcja na białą/czarną linię (czujniki IR)
-- [x] Komunikacja przez Bluetooth z aplikacją mobilną
-- [x] Test zasilania bateryjnego (mobilność bez kabli)
-- [x] Sterowanie ruchem w czasie rzeczywistym (UART)
-- [x] Zmiana prędkości robota komendami
-- [x] Przełączanie między trybem ręcznym a automatycznym
-- [x] Poprawne zatrzymanie robota na komendę
-- [x] Odczyt i transmisja odległości przez UART
-- [x] Reakcja na przeszkody podczas jazdy po linii
+- ✔ Detekcja przeszkody z przodu (sensor HC-SR04)
+- ✔ Reakcja na białą/czarną linię (czujniki IR)
+- ✔ Komunikacja przez Bluetooth z aplikacją mobilną
+- ✔ Test zasilania bateryjnego (mobilność bez kabli)
+- ✔ Sterowanie ruchem w czasie rzeczywistym (UART)
+- ✔ Zmiana prędkości robota komendami
+- ✔ Przełączanie między trybem ręcznym a automatycznym
+- ✔ Poprawne zatrzymanie robota na komendę
+- ✔ Odczyt i transmisja odległości przez UART
+- ✔ Reakcja na przeszkody podczas jazdy po linii
 
 ---
 
 ## 📸 Demo i zdjęcia
 
-- Zdjęcia pojazdu: [`/Media/Zdjęcia`](./Media/Zdjęcia)
-- Nagranie testów: [`/Media/Filmy`](./Media/Filmy)
+- [`Zdjęcia pojazdu`](./Media/Zdjęcia)
+- [`Nagranie testów`](./Media/Filmy)
 
 ---
 
 ## 📄 Dokumentacja
 
-Pełna dokumentacja projektu znajduje się w folderze [`Dokumentacja/`](./Dokumentacja/), w tym:
+Pełna dokumentacja projektu znajduje się w folderze [`Dokumentacja`](./Dokumentacja/), w tym:
 - Raporty z postępów prac nad pojazdem
 - Schematy układów
 - Lista komponentów
@@ -116,8 +116,8 @@ _(Tutaj uzupełnij po zakończeniu projektu)_
 ## 📬 Kontakt
 
 W razie pytań:
-- Email: 21324@student.ans-elblag.pl
-- GitHub: https://github.com/kacprow21324
+- Email:   21324@student.ans-elblag.pl
+- GitHub:  https://github.com/kacprow21324
 
 ---
 
