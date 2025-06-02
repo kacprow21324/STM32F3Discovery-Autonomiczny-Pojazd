@@ -8,7 +8,7 @@ Repozytorium zawiera kod, dokumentację oraz materiały projektowe.
 
 ---
 
-![M3_3](M3_3.jpg)
+![M3_3](./Media/Zdjęcia/M3_3.jpg)
 
 ---
 
