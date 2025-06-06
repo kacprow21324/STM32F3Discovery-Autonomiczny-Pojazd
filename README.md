@@ -287,7 +287,22 @@ Pełna dokumentacja projektu znajduje się w folderze [`Dokumentacja`](./Dokumen
 
 ## 🧠 Wnioski
 
-_(Tutaj uzupełnij po zakończeniu projektu)_
+## Wnioski
+
+1. **Skuteczna regulacja prędkości i stabilność jazdy**  
+   Dzięki zastosowaniu modułu PWM na timerze TIM3 oraz funkcji `aktualizujPredkosc` udało się uzyskać płynną i powtarzalną kontrolę prędkości w zakresie od 0 do 100 %. Precyzyjne ustawienie wypełnienia sygnału PWM przełożyło się na stabilne zachowanie robota przy różnych prędkościach, co potwierdziły testy porównawcze w warunkach laboratoryjnych.
+
+2. **Niezawodne sterowanie kierunkiem ruchu**  
+   Implementacja funkcji sterujących (m.in. `jedzNaprzod`, `jedzDoTylu`, `skrecWLewo`, `skrecWPrawo`, `zatrzymajRobota`) pozwoliła na szybkie i jednoznaczne określenie stanu pinów IN1–IN4, co przełożyło się na natychmiastowe reakcje silników. W trakcie testów robot reagował bez opóźnień na komendy zmiany kierunku, co świadczy o poprawnej konfiguracji GPIO oraz logicznej spójności kodu.
+
+3. **Rzetelne pomiary odległości i bezpieczeństwo**  
+   Zastosowanie dwóch czujników ultradźwiękowych (funkcja `zmierzOdleglosc`) udało się zintegrować w sposób umożliwiający pomiar odległości z częstotliwością umożliwiającą wykrywanie przeszkód w czasie rzeczywistym. Sprawdzone algorytmy zabezpieczające (timeout w oczekiwaniu na echo) chroniły przed blokowaniem programu w przypadku błędnych sygnałów, co zwiększyło bezpieczeństwo działania robota.
+
+4. **Precyzyjne śledzenie linii z minimalnym zakłóceniem**  
+   Algorytm `jedzPoLinii`, oparty na pięciu czujnikach IR, wykazał wysoką skuteczność w utrzymywaniu robota na zadanej trasie. Analiza stanów czujników (skrajnie lewy, lewy, centralny, prawy, skrajnie prawy) w połączeniu z dynamicznym dostosowywaniem kierunku i prędkości zapewniła płynne śledzenie linii nawet przy niewielkich odchyleniach, bez konieczności dodatkowych filtrów czy skomplikowanych wag.
+
+5. **Responsywna komunikacja UART i ergonomia sterowania**  
+   Wykorzystanie przerwań UART (`HAL_UART_Receive_IT` oraz `HAL_UART_RxCpltCallback`) umożliwiło asynchroniczne odbieranie komend od użytkownika, co znacznie poprawiło ergonomię obsługi robota. Użytkownik otrzymuje zwrotną informację o stanie (np. aktualnej prędkości) szybko i bez opóźnień, co potwierdziły próby ręcznego sterowania. Ten model komunikacji minimalizuje ryzyko opóźnień i kolizji w głównej pętli sterującej.  
 
 ---
 
