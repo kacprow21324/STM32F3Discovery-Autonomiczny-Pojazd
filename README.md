@@ -123,7 +123,7 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 
 ---
 
-📒 Instrukcja uruchomienia
+## 📒 Instrukcja uruchomienia
 
 1. Pobieramy program [`STM32CubeIDE`](https://www.st.com/en/development-tools/stm32cubeide.html#get-software) - najlepiej najnowszą wersję.
 
@@ -194,20 +194,36 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 ```
 
 STM32F3Discovery-Autonomiczny-Pojazd/
-├── Dokumentacja/
-│   ├── Harmonogram.pdf
-│   ├── Milstone1_21324.pdf
-│   ├── Milstone2_21324.pdf
-│   ├── Milstone3_21324.pdf
-│   ├── STM32F3Discovery.pdf
-│   ├── Schemat4.1.pdf
-│   └── Schemat4.2.pdf
-├── Kod/
-├── Media/
-│   ├── Zdjęcia/
-│   └── Filmy/   
-├── LICENSE.md
-└── README.md
+├───Dokumentacja
+├───Kod
+│   ├───.settings
+│   ├───Core
+│   │   ├───Inc
+│   │   ├───Src
+│   │   └───Startup
+│   ├───Debug
+│   │   ├───Core
+│   │   │   ├───Src
+│   │   │   └───Startup
+│   │   └───Drivers
+│   │       └───STM32F3xx_HAL_Driver
+│   │           └───Src
+│   └───Drivers
+│       ├───CMSIS
+│       │   ├───Device
+│       │   │   └───ST
+│       │   │       └───STM32F3xx
+│       │   │           ├───Include
+│       │   │           └───Source
+│       │   │               └───Templates
+│       │   └───Include
+│       └───STM32F3xx_HAL_Driver
+│           ├───Inc
+│           │   └───Legacy
+│           └───Src
+└───Media
+    ├───Filmy
+    └───Zdjęcia
 
 ```
 ---
