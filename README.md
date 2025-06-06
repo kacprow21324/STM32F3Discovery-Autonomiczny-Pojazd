@@ -123,6 +123,51 @@ Projekt zakłada stworzenie zaawansowanego modelu pojazdu autonomicznego oparteg
 
 ---
 
+📒 Instrukcja uruchomienia
+
+1. Pobieramy program [`STM32CubeIDE`](https://www.st.com/en/development-tools/stm32cubeide.html#get-software) - najlepiej najnowszą wersję.
+![obraz](https://github.com/user-attachments/assets/304b84a4-5fe3-44d0-b933-a7e4cf9e29bf)
+
+2. Pobierz repozytorium w następujących krokach:
+
+```
+
+1. Otwórz terminal (Git Bash, Terminal macOS/Linux lub PowerShell).  
+2. Przejdź do folderu, w którym chcesz umieścić projekt. Przykład:
+   
+   cd ~/MojeProjekty
+
+3. Skopiuj repozytorium lokalnie poleceniem:
+
+   git clone https://github.com/kacprow21324/STM32F3Discovery-Autonomiczny-Pojazd.git
+
+4. Wejdź do katalogu projektu:
+
+   cd STM32F3Discovery-Autonomiczny-Pojazd
+
+5. Aby w przyszłości pobrać aktualizacje z GitHub:
+
+   git pull
+
+```
+
+3. W programie STM32CubeIDE przechodzimy do zakładki File, a następnie klikamy przycisk "Import".
+![obraz](https://github.com/user-attachments/assets/20563b06-d8e5-42f9-bed6-95de4587941b)
+
+4. W oknie "Import" należy rozwinąć zakładke "General", a później zaznaczyć opcję "Exitsting Projects into Workspace", a następnie kliknąć "Next".
+![obraz](https://github.com/user-attachments/assets/7608f272-dd0c-4da4-a698-fa5bd0836946)
+
+5. Poźniej za pomocą przycisku "Browse" wybieramy ścieżke, w której znajduje się nasz projekt i klikamy przycisk "Finish".
+![obraz](https://github.com/user-attachments/assets/2e35c283-d1db-4d40-b13a-a7df3c1471b4)
+
+6. Następnie przechodzimy do "Core", które rozwijamy, dalej rozwijamy, zakładke "Src", tam przechodzimy do pliku "main.c", w którym znajduje się główny kod projektu.
+![obraz](https://github.com/user-attachments/assets/66de0910-5a55-4e60-9d87-23491f21919e)
+
+7. Na końcu wgrywamy program za pomocą opcji "Run" oraz czekamy aż program załaduje się na płytkę.
+![obraz](https://github.com/user-attachments/assets/d4f3c857-ce70-40c2-8168-4ab561a726b8)
+
+---
+
 ## ⚙️ Funkcjonalności
 
 - ✅ **Napęd robota sterowany przez PWM** – płynna kontrola prędkości silników
