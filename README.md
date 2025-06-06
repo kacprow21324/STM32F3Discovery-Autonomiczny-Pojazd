@@ -287,8 +287,6 @@ Pełna dokumentacja projektu znajduje się w folderze [`Dokumentacja`](./Dokumen
 
 ## 🧠 Wnioski
 
-## Wnioski
-
 1. **Skuteczna regulacja prędkości i stabilność jazdy**  
    Dzięki zastosowaniu modułu PWM na timerze TIM3 oraz funkcji `aktualizujPredkosc` udało się uzyskać płynną i powtarzalną kontrolę prędkości w zakresie od 0 do 100 %. Precyzyjne ustawienie wypełnienia sygnału PWM przełożyło się na stabilne zachowanie robota przy różnych prędkościach, co potwierdziły testy porównawcze w warunkach laboratoryjnych.
 
